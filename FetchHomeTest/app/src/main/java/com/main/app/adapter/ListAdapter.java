@@ -1,14 +1,13 @@
 package com.main.app.adapter;
+
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,6 +22,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private LayoutInflater mInflater;
     private ArrayList<Object1> objects;
     private Context context;
+
     public ListAdapter(ArrayList<Object1> itemList, Context context){
         this.context = context;
         this.mInflater = LayoutInflater.from(context);
@@ -44,17 +44,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                 idTextView.setText(Integer.toString(item.getId()));
 
             } catch (NumberFormatException nfe) {
-
+                Log.i(ListAdapter.class.getName(),"Exception in Id");
             }
             try {
                 listIdTextView.setText(Integer.toString(item.getListId()));
 
             } catch (NumberFormatException nfe) {
+                Log.i(ListAdapter.class.getName(),"Exception in Id of List");
 
             }
             try {
                 nameTextView.setText(item.getName());
             } catch (NullPointerException npe) {
+                Log.i(ListAdapter.class.getName(),"Exception in Name");
 
             }
 
