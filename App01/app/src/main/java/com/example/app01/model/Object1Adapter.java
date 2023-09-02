@@ -13,13 +13,11 @@ import java.util.LinkedList;
 
 public class Object1Adapter extends ArrayAdapter<Object1> {
     private Context context;
-    private int layout;
     private LinkedList<Object1> objects;
 
     public Object1Adapter(Context context, int layout, LinkedList<Object1> itemList){
         super(context, layout, itemList);
         this.context = context;
-        this.layout = layout;
         this.objects = itemList;
     }
 
